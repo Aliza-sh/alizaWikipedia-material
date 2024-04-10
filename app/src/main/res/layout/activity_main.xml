@@ -26,6 +26,28 @@
 
         </com.google.android.material.appbar.AppBarLayout>
 
+        <FrameLayout
+            android:id="@+id/frameMainContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="56dp"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigationMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:animateLayoutChanges="true"
+            android:background="?attr/colorAccent"
+            app:itemIconTint="@color/color_item_bottom_nav_main"
+            app:itemRippleColor="#1A03A9F4"
+            app:itemTextAppearanceActive="@style/BottomNavigationTextActive"
+            app:itemTextAppearanceInactive="@style/BottomNavigationTextInactive"
+            app:itemTextColor="@color/color_item_bottom_nav_main"
+            app:labelVisibilityMode="labeled"
+            app:menu="@menu/menu_bottom_navigation" />
+
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <com.google.android.material.navigation.NavigationView
