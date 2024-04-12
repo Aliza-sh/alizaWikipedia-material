@@ -15,7 +15,7 @@
         <item name="colorAccent">@color/white</item>
         <item name="android:textColor">@color/black</item>
         <item name="fontFamily">@font/primary_regular</item>
-
+        <item name="colorOutlineVariant">@color/white</item>
     </style>
 
     <style name="Theme.AlizaWikipedia" parent="Base.Theme.AlizaWikipedia" />

@@ -16,4 +16,9 @@
         <item name="android:textSize">10sp</item>
     </style>
 
+    <!--  Customize your image user here.  -->
+    <style name="roundedImageViewRounded">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
 </resources>
