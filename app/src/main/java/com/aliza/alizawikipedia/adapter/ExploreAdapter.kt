@@ -10,7 +10,7 @@ import com.aliza.alizawikipedia.data.ItemPost
 import com.aliza.alizawikipedia.databinding.ItemExploreBinding
 import com.bumptech.glide.Glide
 
-class ExploreAdapter(val data: List<ItemPost>) :
+class ExploreAdapter(val data: List<ItemPost> , val itemEvents: ItemEvents) :
     RecyclerView.Adapter<ExploreAdapter.ExploreViewHolder>() {
     lateinit var binding: ItemExploreBinding
 
@@ -24,6 +24,9 @@ class ExploreAdapter(val data: List<ItemPost>) :
             binding.txtItemExploreSubtitle.text = itemPost.txtSubtitle
             binding.txtItemExploreDetail.text = itemPost.txtDetail
 
+            itemView.setOnClickListener {
+                itemEvents.onItemClicked( itemPost )
+            }
         }
     }
 

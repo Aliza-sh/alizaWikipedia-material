@@ -11,7 +11,7 @@ import com.aliza.alizawikipedia.databinding.ItemTrendBinding
 import com.bumptech.glide.Glide
 import jp.wasabeef.glide.transformations.RoundedCornersTransformation
 
-class TrendAdapter(val data: List<ItemPost>) :
+class TrendAdapter(val data: List<ItemPost>,val itemEvents: ItemEvents) :
     RecyclerView.Adapter<TrendAdapter.TrendViewHolder>() {
     lateinit var binding: ItemTrendBinding
 
@@ -27,6 +27,9 @@ class TrendAdapter(val data: List<ItemPost>) :
             binding.txtItemTrendInsight.text = itemPost.insight
             binding.txtItemTrendNumber.text = (adapterPosition + 1).toString()
 
+            itemView.setOnClickListener {
+                itemEvents.onItemClicked(itemPost)
+            }
         }
     }
 
