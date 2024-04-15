@@ -9,6 +9,7 @@ data class ItemPost(
     val txtTitle: String,
     val txtSubtitle: String,
     val txtDetail: String ,
+    val wikiUrl: String ,
 
     // for trend fragment =>
     val isTrend :Boolean ,
