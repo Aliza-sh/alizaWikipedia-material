@@ -1,14 +1,18 @@
 package com.aliza.alizawikipedia.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.aliza.alizawikipedia.DetailActivity
 import com.aliza.alizawikipedia.R
+import com.aliza.alizawikipedia.adapter.ItemEvents
 import com.aliza.alizawikipedia.adapter.TrendAdapter
 import com.aliza.alizawikipedia.base.BaseFragment
 import com.aliza.alizawikipedia.base.NetworkChecker
+import com.aliza.alizawikipedia.base.SEND_DATA_TO_DETAIL_ACTIVITY
 import com.aliza.alizawikipedia.data.ItemPost
 import com.aliza.alizawikipedia.databinding.FragmentTrendBinding
 import com.google.android.material.snackbar.Snackbar
@@ -16,7 +20,7 @@ import com.vearad.vearatick.utils.BottomMarginItemDecoration
 
 class FragmentTrend : BaseFragment<FragmentTrendBinding>(
     FragmentTrendBinding::inflate
-) {
+), ItemEvents {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         networkChecker(view)
@@ -167,7 +171,7 @@ class FragmentTrend : BaseFragment<FragmentTrendBinding>(
 
         )
 
-        val myAdapter = TrendAdapter(dataTrend)
+        val myAdapter = TrendAdapter(dataTrend,this)
 
         binding.recyclerTrend.adapter = myAdapter
         binding.recyclerTrend.layoutManager =
@@ -175,5 +179,11 @@ class FragmentTrend : BaseFragment<FragmentTrendBinding>(
         val bottomMargin = 100
         val itemDecoration = BottomMarginItemDecoration(bottomMargin)
         binding.recyclerTrend.addItemDecoration(itemDecoration)
+    }
+
+    override fun onItemClicked(itemPost: ItemPost) {
+        val intent = Intent(activity , DetailActivity::class.java)
+        intent.putExtra( SEND_DATA_TO_DETAIL_ACTIVITY , itemPost )
+        startActivity( intent )
     }
 }
