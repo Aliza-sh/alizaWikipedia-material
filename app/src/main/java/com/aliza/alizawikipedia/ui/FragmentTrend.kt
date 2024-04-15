@@ -25,6 +25,7 @@ class FragmentTrend : BaseFragment<FragmentTrendBinding>(
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         networkChecker(view)
     }
+
     private fun networkChecker(view: View) {
         if (NetworkChecker(view.context).isInternetConnected) {
             createRecycler()
@@ -41,6 +42,7 @@ class FragmentTrend : BaseFragment<FragmentTrendBinding>(
             snackbar.show()
         }
     }
+
     private fun createRecycler() {
         val dataTrend = arrayListOf(
             ItemPost(
@@ -55,7 +57,7 @@ class FragmentTrend : BaseFragment<FragmentTrendBinding>(
                         "\n" +
                         "Madden was drafted in the 21st round (244th overall) by the NFL's Philadelphia Eagles in 1958, but in his first training camp suffered an injury on his other knee, ending his playing career before having had an opportunity to play professionally.\n" +
                         "\n",
-                true,
+                "https://en.wikipedia.org/wiki/John_Madden", true,
                 "+1 M"
             ),
 
@@ -69,7 +71,7 @@ class FragmentTrend : BaseFragment<FragmentTrendBinding>(
                         "\n" +
                         "Don't Look Up began a limited theatrical release on December 10, 2021, prior to streaming on Netflix on December 24, 2021. It received mixed reviews from critics, who praised the cast but found McKay's approach to the subject heavy handed. Despite the reviews, it was named one of the top ten films of 2021 by the National Board of Review and American Film Institute, and received four nominations at the 79th Golden Globe Awards, including Best Picture – Musical or Comedy, and six at the 27th Critics' Choice Awards, including Best Picture.\n" +
                         "\n",
-                true,
+                "https://en.wikipedia.org/wiki/Don%27t_Look_Up",true,
                 "+362 K"
             ),
 
@@ -85,7 +87,7 @@ class FragmentTrend : BaseFragment<FragmentTrendBinding>(
                         "\n" +
                         "Reid was succeeded as the Senate Democratic leader by Chuck Schumer, whose leadership bid had been endorsed by Reid. Along with Alben W. Barkley and Mike Mansfield, Reid was one of only three senators to have served at least eight years as majority leader.\n" +
                         "\n",
-                true,
+                "https://en.wikipedia.org/wiki/Harry_Reid",true,
                 "+326 K"
             ),
 
@@ -99,7 +101,7 @@ class FragmentTrend : BaseFragment<FragmentTrendBinding>(
                         "\n" +
                         "Spider-Man: No Way Home premiered at the Fox Village Theatre in Los Angeles on December 13, 2021, and was theatrically released in the United States on December 17, as part of Phase Four of the MCU. The film received positive reviews from critics, who praised the story, direction, action sequences, and the cast's performances and chemistry. No Way Home has grossed over \$1.1 billion worldwide, surpassing Spider-Man: Far From Home as the highest-grossing film released by Sony Pictures, in addition to becoming the highest-grossing film of 2021, and the 21st highest-grossing film of all time, and setting several box office records, partly for films released after the onset of the COVID-19 pandemic. A sequel is in development.\n" +
                         "\n",
-                true,
+                "https://en.wikipedia.org/wiki/Spider-Man:_No_Way_Home",true,
                 "+302 K"
             ),
 
@@ -113,7 +115,7 @@ class FragmentTrend : BaseFragment<FragmentTrendBinding>(
                         "\n" +
                         "The Matrix Resurrections premiered in Toronto on December 16, 2021, and was released by Warner Bros. Pictures on December 22, 2021, both theatrically and via the HBO Max streaming service. It has grossed over \$68 million. Critics praised the performances of the cast, though the writing, action scenes, and visuals received some criticism.\n" +
                         "\n",
-                true,
+                "https://en.wikipedia.org/wiki/The_Matrix_Resurrections",true,
                 "+198 K"
             ),
 
@@ -127,7 +129,7 @@ class FragmentTrend : BaseFragment<FragmentTrendBinding>(
                         "\n" +
                         "In 1928 the future actor David Niven, then 18, had sex with 15-year-old Margaret Whigham during a holiday at Bembridge on the Isle of Wight. To the fury of her father, she became pregnant as a result. She was taken into a London nursing home for a secret abortion. \"All hell broke loose,\" remembered her family cook, Elizabeth Duckworth. Margaret did not mention the episode in her 1975 memoirs, but she continued to adore Niven until the day he died. She was among the VIP guests at his London memorial service.\n" +
                         "\n",
-                true,
+                "https://en.wikipedia.org/wiki/Margaret_Campbell,_Duchess_of_Argyll",true,
                 "+344 K"
             ),
 
@@ -141,7 +143,7 @@ class FragmentTrend : BaseFragment<FragmentTrendBinding>(
                         "\n" +
                         "During the evening when Pepa's youngest son Antonio is gifted the ability to speak to animals, Mirabel suddenly sees cracks in the Casita, but her warnings go unheeded when the Casita appears undamaged to the others. Mirabel resolves to save the magic of the Casita. Her super-strong older sister Luisa suggests that Bruno's room, which is located in a forbidden tower in the Casita, may hold some clues to the phenomenon. Inside, Mirabel discovers a cave and recovers pieces of a slab of opaque jade glass which form an image showing her causing the Casita to fall apart. After Mirabel narrowly escapes the cave, Luisa realizes that her family's gifts are starting to weaken.\n" +
                         "\n",
-                true,
+                "https://en.wikipedia.org/wiki/Encanto",true,
                 "+164 K"
             ),
 
@@ -153,7 +155,7 @@ class FragmentTrend : BaseFragment<FragmentTrendBinding>(
                         "\n" +
                         "In parts of Europe, such as several regions of Spain, Czech Republic, Germany, Hungary, the Netherlands, Italy, Poland, Slovakia, Croatia, Denmark, Finland, Sweden, Belgium, Norway and the Republic of Ireland, 26 December is Saint Stephen's Day, which is considered the second day of Christmas.\n" +
                         "\n",
-                true,
+                "https://en.wikipedia.org/wiki/Boxing_Day",true,
                 "+430 K"
             ),
 
@@ -165,13 +167,13 @@ class FragmentTrend : BaseFragment<FragmentTrendBinding>(
                         "\n" +
                         "The primary mirror of JWST, the Optical Telescope Element, consists of 18 hexagonal mirror segments made of gold-plated beryllium, which combine to create a 6.5 m (21 ft)-diameter mirror – considerably larger than Hubble's 2.4 m (7.9 ft) mirror. Unlike the Hubble telescope, which observes in the near ultraviolet, visible, and near infrared (0.1–1.0 μm) spectra, JWST will observe in a lower frequency range, from long-wavelength visible light (red) through mid-infrared (0.6–28.3 μm). This will enable it to observe high-redshift objects that are too old and too distant for Hubble. The telescope must be kept very cold to observe in the infrared without interference, so it will be deployed in space near the Sun–Earth L2 Lagrange point, about 1.5 million kilometers (930,000 mi) from Earth (0.01 au – 3.9 times the average distance to the Moon).\n" +
                         "\n",
-                true,
+                "https://en.wikipedia.org/wiki/James_Webb_Space_Telescope",true,
                 "+372 K"
             )
 
         )
 
-        val myAdapter = TrendAdapter(dataTrend,this)
+        val myAdapter = TrendAdapter(dataTrend, this)
 
         binding.recyclerTrend.adapter = myAdapter
         binding.recyclerTrend.layoutManager =
@@ -182,8 +184,8 @@ class FragmentTrend : BaseFragment<FragmentTrendBinding>(
     }
 
     override fun onItemClicked(itemPost: ItemPost) {
-        val intent = Intent(activity , DetailActivity::class.java)
-        intent.putExtra( SEND_DATA_TO_DETAIL_ACTIVITY , itemPost )
-        startActivity( intent )
+        val intent = Intent(activity, DetailActivity::class.java)
+        intent.putExtra(SEND_DATA_TO_DETAIL_ACTIVITY, itemPost)
+        startActivity(intent)
     }
 }

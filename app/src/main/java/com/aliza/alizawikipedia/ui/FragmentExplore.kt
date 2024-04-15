@@ -20,7 +20,7 @@ import com.vearad.vearatick.utils.BottomMarginItemDecoration
 
 class FragmentExplore : BaseFragment<FragmentExploreBinding>(
     FragmentExploreBinding::inflate
-) ,ItemEvents {
+), ItemEvents {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         networkChecker(view)
@@ -43,6 +43,7 @@ class FragmentExplore : BaseFragment<FragmentExploreBinding>(
             snackbar.show()
         }
     }
+
     private fun createRecycler() {
         val dataExplore =
             listOf(
@@ -57,7 +58,7 @@ class FragmentExplore : BaseFragment<FragmentExploreBinding>(
                             "History\n" +
                             "1992–1993: Formation and Emergency on Planet Earth\n" +
                             "Jay Kay was sending songs to record companies, including a hip-hop single released in 1986 under the label StreetSounds. During this time, Kay was influenced by Native American and First Nation peoples and their philosophies; this led to the creation of \"When You Gonna Learn\", a song covering social issues. After he had it recorded, Kay fought with his producer, who took out half the lyrics and produced the song based on what was charting at the time. With the track restored to his preference, the experience helped Kay realise he \"wanted a proper live band with a proper live sound\". The band would be named \"Jamiroquai\", a portmanteau of the words \"jam\" and the name of a Native American confederacy, the Iroquois. He was signed to Acid Jazz Records in 1991 after he sent a demo tape of himself covering a song by the Brand New Heavies. Kay gradually gathered band members, including Wallis Buchanan, who played the didgeridoo. Kay's manager scouted keyboardist Toby Smith, who joined the group as Kay's songwriting partner. In 1992, Jamiroquai began their career by performing in the British club scene. They released \"When You Gonna Learn\" as their debut single, charting outside the UK Top 50 on its initial release. In the following year, Stuart Zender became the band's bassist by audition.\n",
-                    false,
+                    "https://en.wikipedia.org/wiki/Jamiroquai", false,
                     ""
                 ),
                 ItemPost(
@@ -70,7 +71,7 @@ class FragmentExplore : BaseFragment<FragmentExploreBinding>(
                             "\n" +
                             "Meeker became convinced that the Oregon Trail was being forgotten, and he determined to bring it publicity so it could be marked and monuments erected. In 1906–1908, while in his late 70s, he retraced his steps along the Oregon Trail by wagon, seeking to build monuments in communities along the way. His trek reached New York City, and in Washington, D.C., he met President Theodore Roosevelt. He traveled the Trail again several times in the final two decades of this life, including by oxcart in 1910–1912 and by airplane in 1924. During another such trip, in 1928, Meeker fell ill but was succored by Henry Ford. On his return to Washington state, Meeker became ill again and died there on December 3, 1928, at the age of 97. Meeker wrote several books; his work has continued through the activities of such groups as the Oregon-California Trails Association.\n" +
                             "\n",
-                    false,
+                    "https://en.wikipedia.org/wiki/Ezra_Meeker",false,
                     ""
                 ),
                 ItemPost(
@@ -85,7 +86,7 @@ class FragmentExplore : BaseFragment<FragmentExploreBinding>(
                             "\n" +
                             "After 1810, increasingly less socially involved, Beethoven composed many of his most admired works, including later symphonies, mature chamber music and the late piano sonatas. His only opera, Fidelio, first performed in 1805, was revised to its final version in 1814. He composed Missa solemnis between 1819 and 1823 and his final Symphony, No. 9, one of the first examples of a choral symphony, between 1822 and 1824. Written in his last years, his late string quartets, including the Grosse Fuge, of 1825–1826 are among his final achievements. After some months of bedridden illness, he died in 1827. Beethoven's works remain mainstays of the classical music repertoire.\n" +
                             "\n",
-                    false,
+                    "https://en.wikipedia.org/wiki/Piano_sonatas_(Beethoven)",false,
                     ""
                 ),
                 ItemPost(
@@ -98,7 +99,7 @@ class FragmentExplore : BaseFragment<FragmentExploreBinding>(
                             "\n" +
                             "The Hall of Records building had been planned since the late 19th century to replace an outdated building in City Hall Park; plans for the current building were approved in 1897. Construction took place between 1899 and 1907, having been subject to several delays because of controversies over funding, sculptures, and Horgan and Slattery's involvement after Thomas's death in 1901. Renamed the Surrogate's Courthouse in 1962, the building has undergone few alterations over the years. The Surrogate's Courthouse is listed on the National Register of Historic Places as a National Historic Landmark, and its facade and interior are both New York City designated landmarks.\n" +
                             "\n",
-                    false,
+                    "https://en.wikipedia.org/wiki/Surrogate%27s_Courthouse",false,
                     ""
                 ),
                 ItemPost(
@@ -111,7 +112,7 @@ class FragmentExplore : BaseFragment<FragmentExploreBinding>(
                             "\n" +
                             "On the evening of August 16, the hurricane struck southern Texas near Baffin Bay with winds of 130 mph (215 km/h). Buildings were razed at many coastal cities, the worst impacts being felt in Corpus Christi and surrounding communities. Beachfront structures were destroyed by a 9.2-foot (2.8 m) storm surge. Strong gusts and heavy rainfall spread farther inland across mainly rural sectors of southern Texas, damaging towns and their outlying agricultural districts alike. Railroads and other public utilities were disrupted across the region, with widespread power outages. Eight locations set 24-hour rainfall records; among them was Harlingen, which recorded the storm's rainfall maximum with 6 inches (150 mm) of precipitation. The deluge wrought havoc on military camps along the Mexico–United States border, forcing 30,000 garrisoned militiamen to evacuate. Aggregate property damage across Texas reached \$1.8 million (equivalent to \$43 million in 2020), and 20 people were killed. The hurricane quickly weakened over southwestern Texas and dissipated near New Mexico by August 20.\n" +
                             "\n",
-                    false,
+                    "https://en.wikipedia.org/wiki/1916_Texas_hurricane",false,
                     ""
                 ),
                 ItemPost(
@@ -122,12 +123,12 @@ class FragmentExplore : BaseFragment<FragmentExploreBinding>(
                             "\n" +
                             "The smallest owl on the Australian mainland, the Australian boobook is 27 to 36 cm (10.5 to 14 in) long, with predominantly dark-brown plumage with prominent pale spots. It has grey-green or yellow-green eyes. It is generally nocturnal, though is sometimes active at dawn and dusk, retiring to roost in secluded spots in the foliage of trees. The Australian boobook feeds on insects and small vertebrates, hunting by pouncing on them from tree perches. Breeding takes place from late winter to early summer, using tree hollows as nesting sites. The International Union for Conservation of Nature has assessed the Australian boobook as being of least concern on account of its large range and apparently stable population.\n" +
                             "\n",
-                    false,
+                    "https://en.wikipedia.org/wiki/Australian_boobook",false,
                     ""
                 )
             )
 
-        val myAdapter = ExploreAdapter(dataExplore,this)
+        val myAdapter = ExploreAdapter(dataExplore, this)
 
         binding.recyclerExplor.adapter = myAdapter
         binding.recyclerExplor.layoutManager =
@@ -138,9 +139,9 @@ class FragmentExplore : BaseFragment<FragmentExploreBinding>(
     }
 
     override fun onItemClicked(itemPost: ItemPost) {
-        val intent = Intent(activity , DetailActivity::class.java)
-        intent.putExtra( SEND_DATA_TO_DETAIL_ACTIVITY , itemPost )
-        startActivity( intent )
+        val intent = Intent(activity, DetailActivity::class.java)
+        intent.putExtra(SEND_DATA_TO_DETAIL_ACTIVITY, itemPost)
+        startActivity(intent)
 
     }
 
