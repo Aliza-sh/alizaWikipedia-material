@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--  Customize your Toolbar here.  -->
-    <style name="MainToolbar" parent="Theme.MaterialComponents">
+    <style name="MainToolbar" parent="Base.Theme.AlizaWikipedia">
         <item name="fontFamily">@font/primary_bold</item>
         <item name="android:textSize">24sp</item>
+        <item name="colorControlNormal">?attr/colorOnPrimary</item>
+        <item name="android:textColorPrimary">?attr/colorOnPrimary</item>
+
+    </style>
+    <style name="DetailToolbar" parent="Base.Theme.AlizaWikipedia">
+        <item name="fontFamily">@font/primary_bold</item>
+        <item name="android:textSize">18sp</item>
+        <item name="colorControlNormal">?attr/colorOnPrimary</item>
     </style>
 
     <!--  Customize your BottomNavigation here.  -->
