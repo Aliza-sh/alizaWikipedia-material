@@ -16,10 +16,12 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
 
     private var onBackPressedCallback: OnBackPressedCallback? = null
 
+    @RequiresApi(Build.VERSION_CODES.UPSIDE_DOWN_CAKE)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = inflateBinding()
         setContentView(binding.root)
+        overridePendingTransitionEnter()
 
         onBackPressedCallback = object : OnBackPressedCallback(true) {
             @RequiresApi(Build.VERSION_CODES.UPSIDE_DOWN_CAKE)
