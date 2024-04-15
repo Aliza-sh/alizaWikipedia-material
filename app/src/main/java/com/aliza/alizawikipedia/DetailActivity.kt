@@ -1,5 +1,7 @@
 package com.aliza.alizawikipedia
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.view.MenuItem
@@ -39,6 +41,7 @@ class DetailActivity : BaseActivity<ActivityDetailBinding>() {
         }
         return true
     }
+    @RequiresApi(Build.VERSION_CODES.UPSIDE_DOWN_CAKE)
     private fun showData(itemPost: ItemPost) {
         Glide
             .with(this)
@@ -47,5 +50,10 @@ class DetailActivity : BaseActivity<ActivityDetailBinding>() {
         binding.txtDetailTitle.text = itemPost.txtTitle
         binding.txtDetailSubtitle.text = itemPost.txtSubtitle
         binding.txtDetailText.text = itemPost.txtDetail
+
+        binding.fabDetailGoToWiki.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(itemPost.wikiUrl))
+            startActivity(intent)
+        }
     }
 }
