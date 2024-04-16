@@ -1,15 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.FragmentExplore">
+    android:orientation="vertical"
+    tools:context=".ui.FragmentTrend">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Trend To:"
+        app:fontFamily="@font/primary_bold" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroup_trend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            app:singleLine="true"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_trend_generally"
+                style="@style/My_Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Generally" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_trend_music"
+                style="@style/My_Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Music" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_trend_movie"
+                style="@style/My_Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Movie" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_trend_technology"
+                style="@style/My_Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Technology" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_trend_health"
+                style="@style/My_Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Health" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_trend_education"
+                style="@style/My_Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Education" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_trend_travelAndTourism"
+                style="@style/My_Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Travel and tourism" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_trend_sport"
+                style="@style/My_Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sport" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_trend_food"
+                style="@style/My_Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Food" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_trend_artAndCulture"
+                style="@style/My_Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Art and culture" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_trend_scientific"
+                style="@style/My_Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Scientific" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_trend_economics"
+                style="@style/My_Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Economics" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_trend_politics"
+                style="@style/My_Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Politics" />
+
+        </com.google.android.material.chip.ChipGroup>
+
+    </HorizontalScrollView>
 
     <androidx.recyclerview.widget.RecyclerView
-        tools:listitem="@layout/item_trend"
         android:id="@+id/recycler_trend"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        tools:listitem="@layout/item_trend" />
 
-</FrameLayout>
+</LinearLayout>

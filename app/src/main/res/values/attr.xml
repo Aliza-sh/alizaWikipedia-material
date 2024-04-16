@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="tm">
-        <attr name="example" format="color" />
+        <attr name="backgroundColorChip" format="color" />
+        <attr name="textColorChip" format="color" />
     </declare-styleable>
 </resources>
