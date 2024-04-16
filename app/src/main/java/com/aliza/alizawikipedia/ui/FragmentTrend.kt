@@ -30,6 +30,7 @@ class FragmentTrend : BaseFragment<FragmentTrendBinding>(
         if (NetworkChecker(view.context).isInternetConnected) {
             createRecycler()
         } else {
+
             val snackbar =
                 Snackbar.make(binding.root, "No Internet!", Snackbar.LENGTH_INDEFINITE)
                     .setAction("Retry") {
@@ -40,6 +41,7 @@ class FragmentTrend : BaseFragment<FragmentTrendBinding>(
                     .setBackgroundTint(ContextCompat.getColor(view.context, R.color.blue))
             snackbar.view.elevation = 200f
             snackbar.show()
+
         }
     }
 
