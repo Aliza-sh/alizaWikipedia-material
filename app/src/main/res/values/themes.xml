@@ -16,6 +16,8 @@
         <item name="android:textColor">@color/black</item>
         <item name="fontFamily">@font/primary_regular</item>
         <item name="colorOutlineVariant">@color/white</item>
+        <item name="backgroundColorChip">#E4E4E4</item>
+        <item name="textColorChip">@color/black</item>
     </style>
 
     <style name="Theme.AlizaWikipedia" parent="Base.Theme.AlizaWikipedia" />
