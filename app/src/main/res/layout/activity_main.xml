@@ -18,6 +18,8 @@
             android:backgroundTint="?attr/colorPrimary">
 
             <androidx.appcompat.widget.Toolbar
+                app:menu="@menu/menu_appbar_main"
+                app:title="Aliza Wikipedia"
                 android:id="@+id/toolBarMain"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"

@@ -19,6 +19,7 @@ import com.aliza.alizawikipedia.base.URL_DATA
 import com.aliza.alizawikipedia.base.WEBSITE
 import com.aliza.alizawikipedia.base.createSharedPreferences
 import com.aliza.alizawikipedia.base.readPref
+import com.aliza.alizawikipedia.base.showDialog
 import com.aliza.alizawikipedia.base.writePref
 import com.aliza.alizawikipedia.databinding.ActivityMainBinding
 import com.aliza.alizawikipedia.ui.fragments.FragmentExplore
@@ -35,9 +36,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     @RequiresApi(Build.VERSION_CODES.UPSIDE_DOWN_CAKE)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setSupportActionBar(binding.toolBarMain)
         sharedPreferences = createSharedPreferences()
         initialize()
+
+        toolBarOnMenuItemClick()
 
         changeThemeButton.setOnClickListener {
             toggleTheme()
@@ -98,6 +100,27 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             sharedPreferences.writePref(Keys.THEME, Constant.LIGHT)
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
             changeThemeButton.setImageResource(R.drawable.light_mode);
+        }
+    }
+
+    @RequiresApi(Build.VERSION_CODES.UPSIDE_DOWN_CAKE)
+    private fun toolBarOnMenuItemClick() {
+        binding.toolBarMain.setOnMenuItemClickListener {
+            when (it.itemId) {
+                R.id.menu_info -> {
+                    showDialog(
+                        "About us",
+                        "Wikipedia is a free, web-based, collaborative, multilingual encyclopedia project launched in 2001 supported by the non-profit Wikimedia Foundation. \n\nIt is one of the largest and most popular general reference works on the internet. Wikipedia's articles are written collaboratively by volunteers around the world, and almost all of its articles can be edited by anyone with internet access."
+                    )
+                }
+                R.id.menu_writer -> {
+                    replaceActivityFromNavigationDrawer(
+                        "https://en.wikipedia.org/wiki/Wikipedia:How_to_create_a_page",
+                        "Be a Writer"
+                    )
+                }
+            }
+            true
         }
     }
 

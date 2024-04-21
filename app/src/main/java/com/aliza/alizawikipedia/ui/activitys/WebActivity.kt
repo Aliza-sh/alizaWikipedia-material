@@ -7,10 +7,12 @@ import android.view.View
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.annotation.RequiresApi
+import com.aliza.alizawikipedia.R
 import com.aliza.alizawikipedia.base.BaseActivity
 import com.aliza.alizawikipedia.base.TITLE
 import com.aliza.alizawikipedia.base.URL_DATA
 import com.aliza.alizawikipedia.base.WEBSITE
+import com.aliza.alizawikipedia.base.copyToClipboard
 import com.aliza.alizawikipedia.databinding.ActivityWebBinding
 
 class WebActivity : BaseActivity<ActivityWebBinding>() {
@@ -45,6 +47,16 @@ class WebActivity : BaseActivity<ActivityWebBinding>() {
         binding.toolbarWebview.title = title
         binding.toolbarWebview.setNavigationOnClickListener {
             finish()
+        }
+
+        binding.toolbarWebview.setOnMenuItemClickListener {
+            when (it.itemId) {
+                R.id.menu_copy_address -> {
+                    val currentUrl = binding.webView.url!!
+                    copyToClipboard(currentUrl)
+                }
+            }
+            true
         }
     }
 }
