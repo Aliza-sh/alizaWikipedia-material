@@ -17,6 +17,7 @@ import com.aliza.alizawikipedia.data.ItemPost
 import com.aliza.alizawikipedia.databinding.FragmentExploreBinding
 import com.google.android.material.snackbar.Snackbar
 import com.vearad.vearatick.utils.BottomMarginItemDecoration
+import java.text.FieldPosition
 
 class FragmentExplore : BaseFragment<FragmentExploreBinding>(
     FragmentExploreBinding::inflate
@@ -146,5 +147,7 @@ class FragmentExplore : BaseFragment<FragmentExploreBinding>(
         startActivity(intent)
 
     }
+
+    override fun onMenuItemClick(itemPost: ItemPost,position: Int) {}
 
 }

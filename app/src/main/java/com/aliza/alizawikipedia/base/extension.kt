@@ -4,6 +4,7 @@ import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
 import android.content.SharedPreferences
+import android.widget.Toast
 import com.aliza.alizawikipedia.base.Constant.LIGHT
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
@@ -31,4 +32,8 @@ fun Context.copyToClipboard(text: String) {
     val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
     val clip = ClipData.newPlainText("url", text)
     clipboard.setPrimaryClip(clip)
+}
+
+fun Context.showToast(context: Context, str: String) {
+    Toast.makeText(context, str, Toast.LENGTH_SHORT).show()
 }
