@@ -1,4 +1,4 @@
-package com.aliza.alizawikipedia.ui
+package com.aliza.alizawikipedia.ui.fragments
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,7 +6,7 @@ import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.aliza.alizawikipedia.DetailActivity
+import com.aliza.alizawikipedia.ui.activitys.DetailActivity
 import com.aliza.alizawikipedia.R
 import com.aliza.alizawikipedia.adapter.ExploreAdapter
 import com.aliza.alizawikipedia.adapter.ItemEvents

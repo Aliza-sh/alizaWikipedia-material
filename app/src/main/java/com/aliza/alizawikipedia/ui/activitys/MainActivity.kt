@@ -1,9 +1,8 @@
-package com.aliza.alizawikipedia
+package com.aliza.alizawikipedia.ui.activitys
 
 import android.content.SharedPreferences
 import android.os.Build
 import android.os.Bundle
-import android.view.View
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
@@ -11,6 +10,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
+import com.aliza.alizawikipedia.R
 import com.aliza.alizawikipedia.base.BaseActivity
 import com.aliza.alizawikipedia.base.Constant
 import com.aliza.alizawikipedia.base.Keys
@@ -18,9 +18,9 @@ import com.aliza.alizawikipedia.base.createSharedPreferences
 import com.aliza.alizawikipedia.base.readPref
 import com.aliza.alizawikipedia.base.writePref
 import com.aliza.alizawikipedia.databinding.ActivityMainBinding
-import com.aliza.alizawikipedia.ui.FragmentExplore
-import com.aliza.alizawikipedia.ui.FragmentProfile
-import com.aliza.alizawikipedia.ui.FragmentTrend
+import com.aliza.alizawikipedia.ui.fragments.FragmentExplore
+import com.aliza.alizawikipedia.ui.fragments.FragmentProfile
+import com.aliza.alizawikipedia.ui.fragments.FragmentTrend
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
     override fun inflateBinding(): ActivityMainBinding = ActivityMainBinding.inflate(layoutInflater)
