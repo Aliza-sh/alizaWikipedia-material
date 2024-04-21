@@ -1,11 +1,22 @@
 package com.aliza.alizawikipedia
 
+import android.content.SharedPreferences
+import android.os.Build
 import android.os.Bundle
+import android.view.View
+import android.widget.ImageView
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import com.aliza.alizawikipedia.base.BaseActivity
+import com.aliza.alizawikipedia.base.Constant
+import com.aliza.alizawikipedia.base.Keys
+import com.aliza.alizawikipedia.base.createSharedPreferences
+import com.aliza.alizawikipedia.base.readPref
+import com.aliza.alizawikipedia.base.writePref
 import com.aliza.alizawikipedia.databinding.ActivityMainBinding
 import com.aliza.alizawikipedia.ui.FragmentExplore
 import com.aliza.alizawikipedia.ui.FragmentProfile
@@ -13,20 +24,47 @@ import com.aliza.alizawikipedia.ui.FragmentTrend
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
     override fun inflateBinding(): ActivityMainBinding = ActivityMainBinding.inflate(layoutInflater)
+    private lateinit var changeThemeButton: ImageView
+    private lateinit var sharedPreferences: SharedPreferences
 
+    @RequiresApi(Build.VERSION_CODES.UPSIDE_DOWN_CAKE)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setSupportActionBar(binding.toolBarMain)
-        firstRun()
+        sharedPreferences = createSharedPreferences()
+        initialize()
 
-        setIconNavigationDrawer()
+        changeThemeButton.setOnClickListener {
+            toggleTheme()
+        }
+
         setNavigationDrawerMenuOnClickListener()
         setNavigationBottomOnClickListener()
         binding.bottomNavigationMain.setOnItemReselectedListener {}
 
     }
 
-    private fun setIconNavigationDrawer() {
+    private fun initialize() {
+        /*enableEdgeToEdge()
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, windowInsets ->
+            val insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.updateLayoutParams<ViewGroup.MarginLayoutParams> {
+                topMargin = insets.top
+                bottomMargin = insets.bottom
+            }
+            WindowInsetsCompat.CONSUMED
+        }*/
+        changeThemeButton = binding.navigationViewMain.getHeaderView(0).findViewById(R.id.btn_change_theme)
+
+        val currentTheme = sharedPreferences.readPref(Keys.THEME)
+        if (currentTheme == Constant.LIGHT) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            changeThemeButton.setImageResource(R.drawable.light_mode)
+        } else {
+            changeThemeButton.setImageResource(R.drawable.dark_mode)
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        }
+
         val actionBarDrawerToggle = ActionBarDrawerToggle(
             this,
             binding.drawerLayoutMain,
@@ -36,6 +74,24 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         )
         binding.drawerLayoutMain.addDrawerListener(actionBarDrawerToggle)
         actionBarDrawerToggle.syncState()
+
+        replaceFragment(FragmentExplore())
+        binding.bottomNavigationMain.selectedItemId = R.id.menu_explore
+    }
+    
+    private fun toggleTheme() {
+
+        val currentTheme = sharedPreferences.readPref(Keys.THEME)
+
+        if (currentTheme == Constant.LIGHT) {
+            sharedPreferences.writePref(Keys.THEME, Constant.DARK)
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            changeThemeButton.setImageResource(R.drawable.dark_mode);
+        } else {
+            sharedPreferences.writePref(Keys.THEME, Constant.LIGHT)
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            changeThemeButton.setImageResource(R.drawable.light_mode);
+        }
     }
 
     private fun setNavigationDrawerMenuOnClickListener() {
@@ -92,8 +148,5 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         transaction.replace(R.id.frameMainContainer, fragment)
             .commit()
     }
-    private fun firstRun() {
-        replaceFragment(FragmentExplore())
-        binding.bottomNavigationMain.selectedItemId = R.id.menu_explore
-    }
+
 }
