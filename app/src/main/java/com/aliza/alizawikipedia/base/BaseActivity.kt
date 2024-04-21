@@ -29,6 +29,7 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
                 // Check if there are any fragments in the back stack
                 if (supportFragmentManager.backStackEntryCount > 0) {
                     // Pop the fragment from the back stack
+                    onBack()
                     supportFragmentManager.popBackStack()
                 } else {
                     // Close the activity
@@ -38,6 +39,7 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
         }
         onBackPressedDispatcher.addCallback(this, onBackPressedCallback!!)
     }
+    open fun onBack(){}
 
     override fun onDestroy() {
         super.onDestroy()

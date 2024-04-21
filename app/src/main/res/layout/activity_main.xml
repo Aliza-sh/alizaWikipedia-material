@@ -52,10 +52,13 @@
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigationViewMain"
-        app:headerLayout="@layout/header_main"
-        app:menu="@menu/menu_navigation_drawer"
-        android:layout_gravity="start"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/header_main"
+        app:itemTextAppearance="@font/primary_regular"
+        app:itemIconTint="@color/text_and_icon_drawer_item"
+        app:itemTextColor="@color/text_and_icon_drawer_item"
+        app:menu="@menu/menu_navigation_drawer" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

@@ -18,6 +18,9 @@
         <item name="colorOutlineVariant">@color/white</item>
         <item name="backgroundColorChip">#E4E4E4</item>
         <item name="textColorChip">@color/black</item>
+        <item name="backgroundColorDrawerItem">@color/white</item>
+        <item name="textColorDrawerItem">@color/black</item>
+
     </style>
 
     <style name="Theme.AlizaWikipedia" parent="Base.Theme.AlizaWikipedia" />

@@ -16,6 +16,9 @@
         android:theme="@style/Theme.AlizaWikipedia"
         tools:targetApi="34">
         <activity
+            android:name=".ui.activitys.WebActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.activitys.DetailActivity"
             android:exported="false" />
         <activity
