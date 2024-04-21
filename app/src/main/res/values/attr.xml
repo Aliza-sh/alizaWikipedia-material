@@ -3,5 +3,8 @@
     <declare-styleable name="tm">
         <attr name="backgroundColorChip" format="color" />
         <attr name="textColorChip" format="color" />
+
+        <attr name="backgroundColorDrawerItem" format="color" />
+        <attr name="textColorDrawerItem" format="color" />
     </declare-styleable>
 </resources>

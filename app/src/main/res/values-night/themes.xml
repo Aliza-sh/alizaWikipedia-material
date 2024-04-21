@@ -18,5 +18,8 @@
         <item name="colorOutlineVariant">@color/black_light</item>
         <item name="backgroundColorChip">#2A2A2A</item>
         <item name="textColorChip">@color/white</item>
+        <item name="backgroundColorDrawerItem">@color/black_light</item>
+        <item name="textColorDrawerItem">@color/white</item>
+
     </style>
 </resources>

@@ -8,8 +8,8 @@
     android:layout_marginEnd="16dp"
     android:clickable="true"
     android:focusable="true"
-    app:cardCornerRadius="8dp"
     app:cardBackgroundColor="?attr/colorAccent"
+    app:cardCornerRadius="8dp"
     app:cardElevation="0dp"
     app:rippleColor="#0D03A9F4"
     app:strokeColor="@color/gray"
@@ -20,19 +20,18 @@
         android:layout_height="wrap_content"
         android:paddingBottom="16dp">
 
-        <TextView
-            android:id="@+id/txt_item_trend_number"
-            android:layout_width="18dp"
-            android:layout_height="18dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/shape_circle"
-            android:gravity="center"
-            android:text="1"
-            android:textColor="@color/blue"
-            android:textSize="12sp"
+        <ImageView
+            android:layout_margin="5dp"
+            android:padding="5dp"
+            android:id="@+id/btn_item_menu"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="start"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:tint="?attr/textColorChip"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_menu" />
 
         <ImageView
             android:id="@+id/img_item_trend"

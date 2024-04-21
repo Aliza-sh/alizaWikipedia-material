@@ -1,18 +1,20 @@
-package com.aliza.alizawikipedia.ui
+package com.aliza.alizawikipedia.ui.fragments
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.PopupMenu
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.aliza.alizawikipedia.DetailActivity
+import com.aliza.alizawikipedia.ui.activitys.DetailActivity
 import com.aliza.alizawikipedia.R
 import com.aliza.alizawikipedia.adapter.ItemEvents
 import com.aliza.alizawikipedia.adapter.TrendAdapter
 import com.aliza.alizawikipedia.base.BaseFragment
 import com.aliza.alizawikipedia.base.NetworkChecker
 import com.aliza.alizawikipedia.base.SEND_DATA_TO_DETAIL_ACTIVITY
+import com.aliza.alizawikipedia.base.showToast
 import com.aliza.alizawikipedia.data.ItemPost
 import com.aliza.alizawikipedia.databinding.FragmentTrendBinding
 import com.google.android.material.chip.ChipGroup
@@ -194,6 +196,30 @@ class FragmentTrend : BaseFragment<FragmentTrendBinding>(
         val intent = Intent(activity, DetailActivity::class.java)
         intent.putExtra(SEND_DATA_TO_DETAIL_ACTIVITY, itemPost)
         startActivity(intent)
+    }
+
+    override fun onMenuItemClick(itemPost: ItemPost,position:Int) {
+        val viewHolder = binding.recyclerTrend.findViewHolderForAdapterPosition(position) as TrendAdapter.TrendViewHolder
+        viewHolder.let { holder ->
+            val btnMenuCompanyExpenses = holder.btnMenu
+            val popupMenu = PopupMenu(binding.root.context, btnMenuCompanyExpenses)
+            popupMenu.inflate(R.menu.menu_trend_item)
+            popupMenu.show()
+
+            popupMenu.setOnMenuItemClickListener { item ->
+                when (item.itemId) {
+                    R.id.menu_item_trend_info -> {
+                        requireContext().showToast(requireContext(),itemPost.txtTitle)
+                        true
+                    }
+                    R.id.menu_item_trend_saved -> {
+                        requireContext().showToast(requireContext(),"Saved")
+                        true
+                    }
+                    else -> false
+                }
+            }
+        }
     }
 
     private fun setOnCheckedChangeListenerChipGroup(chipGroup: ChipGroup) {

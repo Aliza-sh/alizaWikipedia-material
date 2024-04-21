@@ -16,7 +16,8 @@ class TrendAdapter(val data: List<ItemPost>,val itemEvents: ItemEvents) :
     lateinit var binding: ItemTrendBinding
 
     inner class TrendViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bindViews(itemPost: ItemPost) {
+        val btnMenu = binding.btnItemMenu
+        fun bindViews(itemPost: ItemPost, clickListener: ItemEvents, position: Int) {
             Glide
                 .with(itemView.context)
                 .load(itemPost.imgUrl)
@@ -25,7 +26,10 @@ class TrendAdapter(val data: List<ItemPost>,val itemEvents: ItemEvents) :
             binding.txtItemTrendTitle.text = itemPost.txtTitle
             binding.txtItemTrendSubtitle.text = itemPost.txtSubtitle
             binding.txtItemTrendInsight.text = itemPost.insight
-            binding.txtItemTrendNumber.text = (adapterPosition + 1).toString()
+
+            btnMenu.setOnClickListener {
+                clickListener.onMenuItemClick(itemPost,position)
+            }
 
             itemView.setOnClickListener {
                 itemEvents.onItemClicked(itemPost)
@@ -43,7 +47,7 @@ class TrendAdapter(val data: List<ItemPost>,val itemEvents: ItemEvents) :
     }
 
     override fun onBindViewHolder(holder: TrendViewHolder, position: Int) {
-        holder.bindViews(data[position])
+        holder.bindViews(data[position],itemEvents,position)
         holder.itemView.startAnimation(
             AnimationUtils.loadAnimation(
                 binding.root.context,

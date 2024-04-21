@@ -1,4 +1,4 @@
-package com.aliza.alizawikipedia.ui
+package com.aliza.alizawikipedia.ui.fragments
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,7 +6,7 @@ import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.aliza.alizawikipedia.DetailActivity
+import com.aliza.alizawikipedia.ui.activitys.DetailActivity
 import com.aliza.alizawikipedia.R
 import com.aliza.alizawikipedia.adapter.ExploreAdapter
 import com.aliza.alizawikipedia.adapter.ItemEvents
@@ -17,6 +17,7 @@ import com.aliza.alizawikipedia.data.ItemPost
 import com.aliza.alizawikipedia.databinding.FragmentExploreBinding
 import com.google.android.material.snackbar.Snackbar
 import com.vearad.vearatick.utils.BottomMarginItemDecoration
+import java.text.FieldPosition
 
 class FragmentExplore : BaseFragment<FragmentExploreBinding>(
     FragmentExploreBinding::inflate
@@ -146,5 +147,7 @@ class FragmentExplore : BaseFragment<FragmentExploreBinding>(
         startActivity(intent)
 
     }
+
+    override fun onMenuItemClick(itemPost: ItemPost,position: Int) {}
 
 }

@@ -1,4 +1,4 @@
-package com.aliza.alizawikipedia.ui
+package com.aliza.alizawikipedia.ui.fragments
 
 import android.os.Bundle
 import android.view.View

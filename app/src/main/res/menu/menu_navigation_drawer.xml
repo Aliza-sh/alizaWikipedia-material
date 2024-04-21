@@ -1,23 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:tools="http://schemas.android.com/tools"
+<menu
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:checkable="true"
         android:id="@+id/menu_writer"
         android:icon="@drawable/ic_writer"
         android:title="be a writer" />
 
     <item
+        android:checkable="true"
         android:id="@+id/menu_photograph"
         android:icon="@drawable/ic_photographer"
         android:title="be a photographer" />
 
     <item
+        android:checkable="true"
         android:id="@+id/menu_vieo_maker"
         android:icon="@drawable/ic_video_maker"
         android:title="be a movie maker" />
 
     <item
+        android:checkable="true"
         android:id="@+id/menu_translator"
         android:icon="@drawable/ic_translate"
         android:title="be a translator"/>

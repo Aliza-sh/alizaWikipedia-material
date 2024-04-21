@@ -5,7 +5,7 @@
     android:id="@+id/drawerLayoutMain"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ui.activitys.MainActivity">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
@@ -18,6 +18,8 @@
             android:backgroundTint="?attr/colorPrimary">
 
             <androidx.appcompat.widget.Toolbar
+                app:menu="@menu/menu_appbar_main"
+                app:title="Aliza Wikipedia"
                 android:id="@+id/toolBarMain"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
@@ -52,10 +54,13 @@
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigationViewMain"
-        app:headerLayout="@layout/header_main"
-        app:menu="@menu/menu_navigation_drawer"
-        android:layout_gravity="start"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/header_main"
+        app:itemTextAppearance="@font/primary_regular"
+        app:itemIconTint="@color/text_and_icon_drawer_item"
+        app:itemTextColor="@color/text_and_icon_drawer_item"
+        app:menu="@menu/menu_navigation_drawer" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

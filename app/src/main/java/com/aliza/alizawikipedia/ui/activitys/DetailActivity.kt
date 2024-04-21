@@ -1,4 +1,4 @@
-package com.aliza.alizawikipedia
+package com.aliza.alizawikipedia.ui.activitys
 
 import android.content.Intent
 import android.net.Uri

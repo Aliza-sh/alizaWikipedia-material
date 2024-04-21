@@ -11,3 +11,7 @@ object Constant {
     val LIGHT = "light"
     val DARK = "dark"
 }
+
+const val URL_DATA = "url_data"
+const val WEBSITE = "webSite"
+const val TITLE = "title"
