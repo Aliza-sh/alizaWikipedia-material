@@ -75,8 +75,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         binding.drawerLayoutMain.addDrawerListener(actionBarDrawerToggle)
         actionBarDrawerToggle.syncState()
 
+
         replaceFragment(FragmentExplore())
         binding.bottomNavigationMain.selectedItemId = R.id.menu_explore
+
     }
     
     private fun toggleTheme() {
@@ -127,6 +129,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         }
     }
 
+
     private fun setNavigationBottomOnClickListener() {
         binding.bottomNavigationMain.setOnItemSelectedListener {
             when (it.itemId) {
@@ -148,5 +151,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         transaction.replace(R.id.frameMainContainer, fragment)
             .commit()
     }
+
 
 }
