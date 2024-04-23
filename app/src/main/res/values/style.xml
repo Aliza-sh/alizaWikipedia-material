@@ -3,25 +3,12 @@
     <!--  Customize your Toolbar here.  -->
     <style name="MainToolbar" parent="Base.Theme.AlizaWikipedia">
         <item name="fontFamily">@font/primary_bold</item>
-        <item name="android:textSize">24sp</item>
-        <item name="colorControlNormal">?attr/colorOnPrimary</item>
-        <item name="android:textColorPrimary">?attr/colorOnPrimary</item>
+        <item name="android:textSize">22sp</item>
 
     </style>
     <style name="DetailToolbar" parent="Base.Theme.AlizaWikipedia">
         <item name="fontFamily">@font/primary_bold</item>
-        <item name="android:textSize">18sp</item>
-        <item name="colorControlNormal">?attr/colorOnPrimary</item>
-    </style>
-
-    <!--  Customize your BottomNavigation here.  -->
-    <!-- TextActive -->
-    <style name="BottomNavigationTextActive" parent="TextAppearance.AppCompat">
-        <item name="android:textSize">12sp</item>
-    </style>
-    <!-- TextInactive -->
-    <style name="BottomNavigationTextInactive" parent="TextAppearance.AppCompat">
-        <item name="android:textSize">10sp</item>
+        <item name="android:textSize">22sp</item>
     </style>
 
     <!--  Customize your image user here.  -->
@@ -31,10 +18,5 @@
     </style>
 
     <!--  Customize your chips user here.  -->
-    <style name="My_Widget.MaterialComponents.Chip.Choice" parent="Widget.MaterialComponents.Chip.Choice">
-        <!-- Chip background color selector -->
-        <item name="chipBackgroundColor">@color/bg_chip_state_list</item>
-        <!-- Chip text color selector -->
-        <item name="android:textColor">@color/text_color_chip_state_list</item>
-    </style>
+    <style name="My_Widget.MaterialComponents.Chip.Choice" parent="Widget.MaterialComponents.Chip.Choice"/>
 </resources>

@@ -8,11 +8,8 @@
     android:layout_marginEnd="16dp"
     android:clickable="true"
     android:focusable="true"
-    app:cardBackgroundColor="?attr/colorAccent"
     app:cardCornerRadius="8dp"
     app:cardElevation="0dp"
-    app:rippleColor="#0D03A9F4"
-    app:strokeColor="@color/gray"
     app:strokeWidth="1dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -28,10 +25,9 @@
             android:layout_height="32dp"
             android:layout_gravity="start"
             android:background="?attr/selectableItemBackgroundBorderless"
-            app:tint="?attr/textColorChip"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_menu" />
+            android:src="@drawable/ic_menu"/>
 
         <ImageView
             android:id="@+id/img_item_trend"
@@ -62,7 +58,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:text="Amercian Football\ncoach and commentator\n(1936-2021)"
-            android:textColor="@color/gray"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="@+id/txt_item_trend_title"
             app:layout_constraintTop_toBottomOf="@+id/txt_item_trend_title" />
@@ -73,7 +68,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="+280 K"
-            android:textColor="@color/green"
             android:textSize="12sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"

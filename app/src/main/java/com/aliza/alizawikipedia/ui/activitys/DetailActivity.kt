@@ -5,6 +5,7 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.view.MenuItem
+import androidx.activity.enableEdgeToEdge
 import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
 import com.aliza.alizawikipedia.base.BaseActivity
@@ -20,6 +21,7 @@ class DetailActivity : BaseActivity<ActivityDetailBinding>() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         configToolBar()
+        enableEdgeToEdge()
 
         val dataPost = intent.getParcelableExtra(SEND_DATA_TO_DETAIL_ACTIVITY ,ItemPost::class.java)
         if (dataPost != null) {

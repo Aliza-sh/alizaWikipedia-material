@@ -3,11 +3,9 @@ package com.aliza.alizawikipedia.ui.fragments
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.aliza.alizawikipedia.ui.activitys.DetailActivity
-import com.aliza.alizawikipedia.R
 import com.aliza.alizawikipedia.adapter.ExploreAdapter
 import com.aliza.alizawikipedia.adapter.ItemEvents
 import com.aliza.alizawikipedia.base.BaseFragment
@@ -17,7 +15,6 @@ import com.aliza.alizawikipedia.data.ItemPost
 import com.aliza.alizawikipedia.databinding.FragmentExploreBinding
 import com.google.android.material.snackbar.Snackbar
 import com.vearad.vearatick.utils.BottomMarginItemDecoration
-import java.text.FieldPosition
 
 class FragmentExplore : BaseFragment<FragmentExploreBinding>(
     FragmentExploreBinding::inflate
@@ -38,9 +35,6 @@ class FragmentExplore : BaseFragment<FragmentExploreBinding>(
                     .setAction("Retry") {
                         networkChecker(view)
                     }
-                    .setActionTextColor(ContextCompat.getColor(view.context, R.color.white))
-                    .setTextColor(ContextCompat.getColor(view.context, R.color.white))
-                    .setBackgroundTint(ContextCompat.getColor(view.context, R.color.blue))
             snackbar.view.elevation = 200f
             snackbar.show()
 
