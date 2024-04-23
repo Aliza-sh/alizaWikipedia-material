@@ -2,14 +2,16 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:paddingTop="28dp"
     android:layout_width="match_parent"
-    android:layout_height="170dp"
-    android:background="?attr/colorPrimary">
+    android:layout_height="200dp"
+    android:background="?attr/colorSecondaryContainer">
 
     <ImageView
         android:background="?attr/selectableItemBackgroundBorderless"
         android:backgroundTint="?attr/colorPrimary"
         android:id="@+id/btn_change_theme"
+        android:tint="?attr/colorOnSecondaryContainer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -36,8 +38,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginBottom="2dp"
         android:text="what is wikipedia?"
-        android:textColor="@color/white"
         android:textSize="22sp"
+        android:textColor="?attr/colorOnSecondaryContainer"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintStart_toStartOf="parent" />
@@ -48,8 +50,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="16dp"
+        android:textColor="?attr/colorOnSecondaryContainer"
         android:text="a free online encyclopedia"
-        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

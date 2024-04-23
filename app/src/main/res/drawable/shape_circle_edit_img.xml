@@ -3,9 +3,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="oval">
 
-    <solid android:color="@color/blue"/>
+    <solid android:color="?attr/colorTertiary"/>
     <stroke
-        android:width="3dp"
+        android:width="2dp"
         android:color="?attr/colorOutlineVariant" />
 
 </shape>
