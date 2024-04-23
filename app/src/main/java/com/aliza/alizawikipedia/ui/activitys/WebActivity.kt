@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.webkit.WebView
 import android.webkit.WebViewClient
+import androidx.activity.enableEdgeToEdge
 import androidx.annotation.RequiresApi
 import com.aliza.alizawikipedia.R
 import com.aliza.alizawikipedia.base.BaseActivity
@@ -33,6 +34,7 @@ class WebActivity : BaseActivity<ActivityWebBinding>() {
     @RequiresApi(Build.VERSION_CODES.UPSIDE_DOWN_CAKE)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
 
         val bundle = intent.getBundleExtra(URL_DATA)!!
         val url = bundle.getString(WEBSITE)!!

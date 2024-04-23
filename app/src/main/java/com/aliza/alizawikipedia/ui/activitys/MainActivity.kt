@@ -5,6 +5,7 @@ import android.content.SharedPreferences
 import android.os.Build
 import android.os.Bundle
 import android.widget.ImageView
+import androidx.activity.enableEdgeToEdge
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatDelegate
@@ -52,24 +53,16 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     }
 
     private fun initialize() {
-        /*enableEdgeToEdge()
-        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, windowInsets ->
-            val insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.updateLayoutParams<ViewGroup.MarginLayoutParams> {
-                topMargin = insets.top
-                bottomMargin = insets.bottom
-            }
-            WindowInsetsCompat.CONSUMED
-        }*/
-        changeThemeButton = binding.navigationViewMain.getHeaderView(0).findViewById(R.id.btn_change_theme)
+        enableEdgeToEdge()
+
+        changeThemeButton =
+            binding.navigationViewMain.getHeaderView(0).findViewById(R.id.btn_change_theme)
 
         val currentTheme = sharedPreferences.readPref(Keys.THEME)
         if (currentTheme == Constant.LIGHT) {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-            changeThemeButton.setImageResource(R.drawable.light_mode)
-        } else {
             changeThemeButton.setImageResource(R.drawable.dark_mode)
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        } else {
+            changeThemeButton.setImageResource(R.drawable.light_mode)
         }
 
         val actionBarDrawerToggle = ActionBarDrawerToggle(
@@ -95,11 +88,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         if (currentTheme == Constant.LIGHT) {
             sharedPreferences.writePref(Keys.THEME, Constant.DARK)
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-            changeThemeButton.setImageResource(R.drawable.dark_mode);
+            changeThemeButton.setImageResource(R.drawable.light_mode);
         } else {
             sharedPreferences.writePref(Keys.THEME, Constant.LIGHT)
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-            changeThemeButton.setImageResource(R.drawable.light_mode);
+            changeThemeButton.setImageResource(R.drawable.dark_mode);
         }
     }
 
